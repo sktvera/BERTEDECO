@@ -1,0 +1,78 @@
+/* Body, Header y otros generales */
+
+body {
+  font-family: "Bahnschrift", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  font-weight: normal;
+  background: #fafafa;
+  color: gray;
+  text-align: left;
+
+}
+
+a {
+  text-decoration: none;
+}
+
+/*dandole estilo a la barra de buscar producto */
+
+.search-div {
+  justify-content: space-around;
+}
+.searchform {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  border-radius: 0.25rem;
+  margin-top: 3%;
+  width: auto;
+}
+
+.searchform .search {
+  width: auto;
+  background: rgb(199, 178, 153) !important;
+  justify-items: center;
+  justify-content: center;
+  text-align: center;
+  align-items:center;
+}
+
+.searchform .form-control {
+  border: none;
+
+}
+
+.searchform .search span {
+  font-size: 1rem;
+  color: #fff;
+}
+
+.container {
+  margin-top: 3%;
+}
+
+/*estoy dandole estilo a los botones*/
+
+.btn {
+  border: none;
+  background-color: rgb(199, 178, 153);
+}
+
+.btn-danger {
+  border: none;
+  background-color: rgb(197, 25, 25);
+}
+
+.btn:hover {
+  background-color:#0a1316;
+}
+
+.btn-danger:hover {
+  background-color: rgb(241, 11, 11);
+}
+
+/* Footer */
+
+footer {
+  height: 10vh;
+}

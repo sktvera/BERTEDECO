@@ -195,9 +195,19 @@ a {
     border-bottom: 1px solid rgb(199, 178, 153);
   }
 
+  .footer-lists {
+    justify-content: space-around!important;
+  }
+
   .first-column, .second-column {
+    display: contents;
+  }
+
+  .cid-qySuWQglmK .mbr-section-title, .cid-qySuWQglmK .card-support {
+    margin-top: 3%;
     text-align: center;
   }
+
 }
 
 /* Body Header, Footer y otros generales */
@@ -205,8 +215,8 @@ a {
 /* Detail Product */
 
 .carousel-item {
-  /* height: 65vh; */
-  min-height: 350px;
+  /* height: max-content; */
+  min-height: 427px;
   background: no-repeat center center scroll;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -233,7 +243,7 @@ a {
 .product-content .product-image {
   background-color: #fff;
   display: block;
-  min-height: 238px;
+  min-height: 427px;
   overflow: hidden;
   position: relative
 }
@@ -535,7 +545,7 @@ a {
   color: gray;
 }
   
-form {
+.well {
   margin: 1.5em;
   border: 1.2em solid rgba(245, 241, 241, 0.5);
   border-radius: 0.2em;
@@ -612,13 +622,18 @@ textarea {
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
+h5.fw-bolder {
+  color: gray;
+}
+
 .label-line {
   border-color: rgb(199, 178, 153);
   color: rgb(199, 178, 153);
   padding: 1px 1px;
   margin-bottom: 1px;
   border: 1px solid;
-  font-size: 13px;
+  border-radius: 0.25rem;
+  font-size: 12px;
   text-transform: none;
 }
 
@@ -627,15 +642,7 @@ textarea {
 }
 
 .card-img-top {
-  height: 60%
-}
-
-@media (max-width: 767px) {
-
-  .card-img-top {
-    height: 40%
-  }
-  
+  height: 100%
 }
 
 /* Related Products */
