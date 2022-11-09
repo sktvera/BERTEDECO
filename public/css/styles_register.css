@@ -71,6 +71,11 @@ a {
   color: rgba(0, 0, 0, 0.3);
 } */
 
+.form-control:focus {
+  box-shadow: none;
+  border-color: rgba(0,0,0,.55)
+}
+
 .searchform {
   height: 50px;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -210,75 +215,38 @@ a {
 
 }
 
-/* Body Header, Footer y otros generales */
+/* para el formulario Nuevo */
 
-/* Formulario */
-
-*{box-sizing:border-box;}
-
-.formbox{
-	width:100%;
-  padding-left:20%;
-  padding-right:20%;
-  padding-top:7%;
-	border-radius:50px;
-	margin:auto;
-	background-color:transparent;
-  color:black;
-  font-family: "Bahnschrift";
-  font-size: 16px;
-  justify-items: center;
-  justify-content: center;
+.register {
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 
-#submitbutton{
-  height:50px;
-  width: 100%;
-  color:white;
-  font-family: "Bahnschrift";
-  font-size: 20px;
+.title {
   text-align: center;
-  border:none;
-  background-color: grey;
-  text-transform: uppercase;
-
+  color: #0a1316;
+  margin-bottom: 2rem!important;
 }
 
-#submitbutton:hover {
-  background-color:rgb(199, 178, 153);
-
-}
-
-.form-border{
-  border: black 1px solid;
-  color:#888C67;
-  padding:3px 0 3px 0;
-  width:100%;
-  justify-content: center;
-  justify-items: center;
-}
-.numero{
-  height:30px;
-  width: 100%;
-  border: black 1px solid;
-}
-#titulo{
-  text-align:center;
-  }
-
-#parent {
-  display: table;
-  width: 90%;
-}
-#form_login {
-  display: table-cell;
-  vertical-align: middle;
-  width: 100%;
-}
-
-#centrado {
+.fail {
   text-align: center;
-  font-size: 16px;
-  
+  margin-top: 2vh;
+  color: #dc3545;
+}
 
+.btn {
+  background-color: rgb(199, 178, 153);
+  border: none;
+  margin-top:3%;
+  width: 100%;
+}
+
+
+.btn:hover {
+  background-color:#0a1316;
+}
+
+.btn:focus {
+  background: rgb(0,0,0);
+  box-shadow: none
 }

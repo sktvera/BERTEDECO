@@ -20,6 +20,12 @@ a {
 .search-div {
   justify-content: space-around;
 }
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: rgba(0,0,0,.55)
+}
+
 .searchform {
   border: 1px solid rgba(255, 255, 255, 0.1);
   overflow: hidden;
@@ -51,6 +57,154 @@ a {
   margin-top: 3%;
 }
 
+.user-fail {
+  color: gray;
+  text-align: center;
+  margin-top: 2vh;
+}
+
+.user-fail > strong{
+  color: #dc3545;
+}
+
+input:invalid+.invalid-feedback > .must-number:before {
+  content: 'Ingrese solo numeros';/* add text untill patterns matches */
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: .875em;
+  color: #dc3545;
+}
+
+input:invalid+.invalid-feedback > .must-number+[type="submit"] {
+  display: none; /* hide input submit untill pattern matches */
+}
+
+.must-number2 {
+  display: contents;
+}
+
+input:invalid+.must-number2:before {
+  content: 'Ingrese solo numeros';/* add text untill patterns matches */
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: .875em;
+  color: #dc3545;
+}
+
+input:invalid+.must-number2+[type="submit"] {
+  display: none; /* hide input submit untill pattern matches */
+}
+
+.not-saved > p {
+  margin-top: 1rem;
+  color: #dc3545;
+}
+
+/* Imagenes borrar */
+
+.delete-images {
+  display: flex;
+  justify-content: flex-start;
+  
+}
+
+img.img-fluid{
+  max-width: 50%;
+  height: auto;
+}
+
+.custom-control.image-checkbox {
+  position: relative;
+  padding-left: 0;
+  margin-bottom: 2rem;
+}
+
+.custom-control {
+  position: relative;
+  display: block;
+  min-height: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+input[type=checkbox] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.custom-control-input {
+  overflow: visible;
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.custom-control.image-checkbox label {
+  cursor: pointer;
+}
+
+.custom-control-label {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 0;
+  vertical-align: top;
+  text-align: center;
+}
+
+.custom-control.image-checkbox label img {
+  border-radius: 2.5px;
+}
+
+.custom-control.image-checkbox label:before {
+  border-color: rgb(241, 11, 11);
+  background-color: rgb(241, 11, 11);
+}
+
+.custom-checkbox .custom-control-label::before {
+  border-radius: 0.25rem;
+}
+
+.custom-control-label::before, .custom-file-label, .custom-select {
+  transition: background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.custom-control-label::before {
+  position: absolute;
+  top: 0.25rem;
+  left: -1.5rem;
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  pointer-events: none;
+  content: "";
+  background-color: #fff;
+  border: #adb5bd solid 1px;
+}
+
+.custom-control.image-checkbox label:after, .custom-control.image-checkbox label:before {
+  transition: opacity .3s ease !important;
+  opacity: 0 !important;
+  left: 4.25rem;
+}
+
+.custom-control-label::after {
+  position: absolute;
+  top: 0.25rem;
+  left: -1.5rem;
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  content: "";
+  background: no-repeat 50%/50% 50%;
+}
+
+.custom-control.image-checkbox .custom-control-input:checked ~ .custom-control-label:after, .custom-control.image-checkbox .custom-control-input:checked ~ .custom-control-label:before {
+  opacity: 1!important;
+}
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::after {
+  background-image: url(/img/trash.png);
+}
+
 /*estoy dandole estilo a los botones*/
 
 .btn {
@@ -65,6 +219,11 @@ a {
 
 .btn:hover {
   background-color:#0a1316;
+}
+
+.btn:focus {
+  background: rgb(0,0,0);
+  box-shadow: none
 }
 
 .btn-danger:hover {

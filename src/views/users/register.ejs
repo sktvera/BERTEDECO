@@ -19,41 +19,71 @@
     <%- include('../partials/header') %>
 
     <!-- Formulario-->
-    <section class= "formbox">
-        
-        <div><form >
-            <p id="titulo"><strong>Comprá más rápido y llevá el control de tus pedidos, ¡en un solo lugar!!</strong></p>
-            <label>Nombre</label>
-            <p>
-            <input type="text" class="form-border" placeholder="ej. María Pérez"/>
-            </p>
-            <label>E-mail</label>
-            <p>       
-                <input type="email" class="form-border" placeholder="ej. nombre@correo.com"/>
-            </p>
-            <label>teléfono (opcional)</label>
-            <p>       
-                <input type="number" class="numero" placeholder="ej. 1137651432"/>
-            </p>
-
-            <label> Contraseña</label>
-            <p>
-                <input type="password"  class="form-border" placeholder="Ingrese Contraseña"/>
-            </p>
-            <label> Confirmar contraseña</label>
-            <p>
-                <input type="password"  class="form-border"/>
-            </p>
-            <p>
-                <button id="submitbutton" type="button">Crear Cuenta</button>
-                </p>
+    <div class="container register">
+        <div class=" row">
+          <div class="col-md-12 order-md-1">
+            <h3 class="mb-3 title">Bienvenido a BerteDeco</h3>
+            <h4 class="mb-3 title">Crea una Cuenta</h4>
+            
+            <% if (existe) { %>
+              <div class="fail">
+                <p>El email ingresado ya se encuentra registrado</p>
+              </div>
+            <% } %>
+            
+            <form class="needs-validation" method="POST" action="/users/register/" novalidate > 
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                <label for="firstName">Nombres</label>
+                <input type="text" class="form-control" id="firstName" name="first_name" required>
+                <div class="invalid-feedback">
+                    El nombre debe de tener al menos 2 letras.
+                </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                <label for="lastName">Apellidos</label>
+                <input type="text" class="form-control" id="lastName" name="last_name" required>
+                <div class="invalid-feedback">
+                    Este campo es obligatorio.
+                </div>
+                </div>
+            </div>
                 
-            <p id="centrado"> Ya tenés cuenta <a href="/users/login" > <strong> Iniciá Sesión</strong> </a> </p>
-          </form></div>
-    </section>
+            <div class="mb-3">
+                <label for="email">Email </label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="tucorreo@mail.com" required>
+                <div class="invalid-feedback">
+                   Se requiere un Email válido.
+                </div>
+            </div>
+            
+            <div class="mb-3">
+                <label for="inputPassword">Contraseña</label>
+                <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Contraseña" required>
+                <div class="invalid-feedback">
+                  La contraseña debe tener al menos 8 carácteres y una Mayúscula, una minúscula, un número y un carácter especial.
+                </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="inputPassword">Confirmar Contraseña</label>  
+              <input type="password" id="inputConfirmation" class="form-control" name="confirmation" placeholder="Confirmar Contraseña" required>
+              <div class="invalid-feedback">
+                Contraseña y confirmar contraseña no coinciden.
+              </div>
+            </div> 
+
+              <button class="btn btn-lg btn-primary btn-block" type="submit">Registrarse</button>
+              <p class="mt-5 mb-3 text-center">Si ya tienes cuenta, <a href="/users/login">Inicia Sesión</a></p>            
+            </form>
+          </div>
+        </div>
+    </div>
 
     <!-- Footer-->
     <%- include('../partials/footer') %>
+
+    <script  src="/js/register.js"></script>
 
 </body>
 </html>

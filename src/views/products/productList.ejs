@@ -53,23 +53,17 @@
                 <% for (let p of productos) { %>
                 <div class="col mb-5">
                     <div class="card h-100">
-                        <% if (typeof p.discount === 'number') { %>
+                        <% if (p.discount.id != 1 && p.discount.active) { %>
                         <!-- Sale badge-->
                         <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
                         <% } %>
                         <!-- Product image-->
-                        <a class="link-image" href="/products/detail/<%=p.id %>"><img class="card-img-top" src="/img/productos/<%=p.image[0] %>" alt="<%=productos[i].name %>"/></a>
+                        <a class="link-image" href="/products/detail/<%=p.id %>"><img class="card-img-top" src="/img/productos/<%= p.images.length > 0 ? p.images[0].name : 'image-needed.png' %>" alt="<%= p.images.length > 0 ? p.images[0].name : 'image-needed.png' %>"/></a>
                         <!-- Product details-->
                         <div class="card-body p-4">
                             <div class="text-center">
                                 <!-- Product name-->
                                 <a href="/products/detail/<%=p.id %>"><h5 class="fw-bolder"><%=p.name %></h5></a>
-                                <% if (typeof p.discount === 'number') { %>
-                                <!-- Product price and Discount-->
-                                <span class="text-muted text-decoration-line-through">$<%=p.price %></span>
-                                $<%=p.discount %><br>
-                                <div class="label-line">6 cuotas sin interés de <strong>$<%=Math.round(p.discount / 6) %></strong></div>
-                                <% } else { %>
                                 <!-- Product reviews-->
                                 <div class="d-flex justify-content-center small text-warning mb-2">
                                     <div class="fa fa-star"></div>
@@ -78,6 +72,12 @@
                                     <div class="fa fa-star"></div>
                                     <div class="fa fa-star-half"></div>
                                 </div> 
+                                <% if (p.discount.id != 1 && p.discount.active) { %>
+                                <!-- Product price and Discount-->
+                                <span class="text-muted text-decoration-line-through">$<%=p.price %></span>
+                                $<%=Math.round(p.price - (p.price * (p.discount.percent / 100))) %><br>
+                                <div class="label-line">6 cuotas sin interés de <strong>$<%=Math.round(Math.round(p.price - (p.price * (p.discount.percent / 100))) / 6) %></strong></div>
+                                <% } else { %>
                                 <!-- Product price-->
                                 $<%=p.price %><br>
                                 <div class="label-line">6 cuotas sin interés de <strong>$<%=Math.round(p.price / 6) %></strong></div>
@@ -86,7 +86,7 @@
                         </div>
                         <!-- Product actions-->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/cart/resume">Agregar al carro</a></div>
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/cart/additem/<%= locals.isLogged ? locals.user.id : '0' %>/<%= p.id %>">Agregar al carro</a></div>
                         </div>
                     </div>
                 </div>
